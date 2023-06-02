@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <html lang="en">
@@ -12,20 +13,89 @@
 	<body>
 		<style>
 			body {
+				margin: 0;
 				height: 100vh;
+				width: 100vw;
 				font-family: 'Courier New', Courier, monospace;
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				overflow: hidden;
+				background-color: #000000;
+			}
+			#background {
+				position: absolute;
+				top: -100vh;
+				left: -100vw;
+				width: 300vw;
+				height: 300vh;
+				background-image: url('public/purple_noise.svg');
+				background-size: cover;
+				z-index: -1;
+				animation: bg 2s ease-in-out infinite;
+			}
+			#message {
+				margin: 200px;
+				width: fit-content;
+				height: fit-content;
+				background: linear-gradient(135deg, #00d0ff, #8400ff, #ff0080);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				opacity: 0.9;
 			}
 			h2 {
 				text-align: right;
 			}
+			a {
+				color: #ffffff;
+				text-decoration: none;
+			}
+			p{
+				font-size: 48pt;
+				font-weight: bolder;
+			}
+			span {
+				display: inline-block;
+				animation: blink 10s linear infinite;
+			}
+			@keyframes bg {
+				0% {
+					opacity: 1;
+				}
+				50% {
+					opacity: 0.7;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@keyframes blink {
+				0% {
+					visibility: visible;
+				}
+				50% {
+					visibility: hidden;
+				}
+				100% {
+					visibility: hidden;
+				}
+			}
+			@media only screen and (max-width: 600px) {
+				#message {
+					margin: 24px;
+				}
+				p {
+					font-size: 24pt;
+				}
+			}
 		</style>
-		<div>
-			<h1>Hi, I'm making something cool with this page, please comeback later.</h1>
+		<div id="background"></div>
+		<div id="message">
+			<p>Hi, I'm making something cool with this site, please comeback later<span>_</span></p>
 			<br><br><br><br><br>
-			<h2> -Erick</h2>
+			<h2>
+				<a href="http://github.com/erick113" target="_blank">@Erick113</a>
+			</h2>
 		</div>
 	</body>
 </html>
