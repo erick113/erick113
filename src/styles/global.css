@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  overflow: hidden;
+}
+#background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+#background > div {
+  position: absolute;
+  top: -25vh;
+  left: -25vw;
+  width: 300vw;
+  height: 300vh;
+  background-image: url('public/pink_noise.svg');
+  background-size: cover;
+  z-index: -1;
+  animation: bg 25s linear infinite;
+}
+#message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  font-family: 'Courier New', Courier, monospace;
+  background: linear-gradient(135deg, #00d0ff, #8400ff, #ff0080);
+  background-clip: text;
+  opacity: 0.9;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+h2 {
+  text-align: right;
+}
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+p{
+  font-size: 36pt;
+  font-weight: bolder;
+  width: 600px;
+}
+span {
+  display: inline-block;
+  animation: blink 1s linear infinite;
+}
+@keyframes bg {
+  0% {
+    transform: perspective(700px) rotateX(25deg) rotateZ(0);
+  }
+  35% {
+    filter: brightness(3);
+  }
+  50% {
+    filter: brightness(0.75);
+  }
+  65% {
+    filter: brightness(3);
+  }
+  100% {
+    transform: perspective(700px) rotateX(25deg) rotateZ(360deg);
+  }
+}
+@keyframes blink {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+@media only screen and (max-width: 400px) {
+  #message {
+    margin: 8px;
+  }
+  p {
+    max-width: 300px;
+    font-size: 24pt;
+  }
+}
+@media screen and (orientation:landscape) {
+  #background > div{
+    position: absolute;
+    top: -50vw;
+    left: -25vw;
+    width: 150vw;
+    height: 150vw;
+  }
+}
+@media screen and (orientation:portrait) {
+  #background > div{
+    position: absolute;
+    top: -50vh;
+    left: -25vh;
+    width: 150vh;
+    height: 150vh;
+  }
+}
