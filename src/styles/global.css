@@ -18,7 +18,7 @@ body {
   left: -25vw;
   width: 300vw;
   height: 300vh;
-  background-image: url('/pink_noise.svg');
+  background-image: url('./pink_noise.svg');
   background-size: cover;
   z-index: -1;
   animation: bg 25s linear infinite;
